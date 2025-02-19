@@ -38,6 +38,14 @@ public class ContaTerminal {
         return balance;
     }
 
+    public void withdraw(Double balance){
+        this.balance -= balance;
+    }
+
+    public void deposit(Double balance){
+        this.balance += balance;
+    }
+
     @Override
     public String toString(){
         return "Olá " + getClientName() + "obrigado por criar uma conta em nosso banco, sua agência é "

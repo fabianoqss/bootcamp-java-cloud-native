@@ -40,7 +40,36 @@ public class Program {
         System.out.println("Deseja realizar Operações de Saque? (Y/N)" );
         char answerBalance = sc.next().charAt(0);
 
+        if(answerBalance == 'Y'){
+            System.out.println("Digite o número da conta que deseja fazer o Saque: ");
+            int accountNumber = sc.nextInt();
+
+            System.out.println("Digite o valor que deseja sacar: ");
+            for(ContaTerminal c : account){
+                if(c.getNumber() == accountNumber){
+                    c.withdraw(sc.nextDouble());
+                }
+            }
+        }
+
+        System.out.println("Deseja realizar Operações de Deposito? (Y/N)" );
+        char answerBalance2 = sc.next().charAt(0);
+
+        if(answerBalance2 == 'Y'){
+            System.out.println("Digite o número da conta que deseja fazer o Deposito: ");
+            int accountNumber = sc.nextInt();
+
+            System.out.println("Digite o valor que deseja depositar: ");
+            for(ContaTerminal c : account){
+                if(c.getNumber() == accountNumber){
+                    c.withdraw(sc.nextDouble());
+                }
+            }
+        }
+
+
         
+
 
     }
 }

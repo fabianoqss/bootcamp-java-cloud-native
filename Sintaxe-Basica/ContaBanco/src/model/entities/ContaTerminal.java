@@ -6,7 +6,10 @@ public class ContaTerminal {
     private String clientName;
     private Double balance;
 
-    public ContaTerminal() {
+    public ContaTerminal(Integer number, String agency, String clientName) {
+        this.number = number;
+        this.agency = agency;
+        this.clientName = clientName;
     }
 
     public ContaTerminal(Integer number, String agency, String clientName, Double balance) {

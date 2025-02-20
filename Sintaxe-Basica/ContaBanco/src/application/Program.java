@@ -49,7 +49,7 @@ public class Program {
 
             for (ContaTerminal c : account) {
                 if (c.getNumber() == accountNumber) {
-                    if (c.getBalance() == null || c.getBalance() <= 0) {
+                    if (c.getBalance() <= 0.0) {
                         System.out.println("A conta não tem saldo disponível.");
                         break;
                     } else {
@@ -73,9 +73,10 @@ public class Program {
             int accountNumber = sc.nextInt();
 
             System.out.println("Digite o valor que deseja depositar: ");
+            sc.nextLine();
             for(ContaTerminal c : account){
                 if(c.getNumber() == accountNumber){
-                    c.withdraw(sc.nextDouble());
+                    c.deposit(sc.nextDouble());
                 }
             }
         }

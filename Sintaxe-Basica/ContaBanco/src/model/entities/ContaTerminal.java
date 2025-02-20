@@ -52,7 +52,7 @@ public class ContaTerminal {
         return "Olá " + getClientName() + " obrigado por criar uma conta em nosso banco, sua agência é "
                 + getAgency() + ", conta "
                 + getNumber() + " e seu saldo " +
-                getBalance() + " já está disponível para Saque";
+                getBalance() + " já está disponível para Saque.";
     }
 
 }

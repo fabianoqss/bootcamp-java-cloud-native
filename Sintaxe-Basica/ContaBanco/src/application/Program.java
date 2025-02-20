@@ -14,10 +14,10 @@ public class Program {
 
         List<ContaTerminal> account = new ArrayList<>();
 
-        System.out.println("Por favor, digite o número da sua agência: ");
+        System.out.println("Por favor, digite o número da sua Conta: ");
         int number = sc.nextInt();
 
-        System.out.println("Por favor, digite o número a Agência: ");
+        System.out.println("Por favor, digite o número da Agência: ");
         String agency = sc.next();
 
         System.out.println("Por favor, digite o Nome do Cliente: ");

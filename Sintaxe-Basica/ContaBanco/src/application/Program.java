@@ -14,16 +14,16 @@ public class Program {
 
         List<ContaTerminal> account = new ArrayList<>();
 
-        System.out.println("Por favor, digite o número da sua agência");
+        System.out.println("Por favor, digite o número da sua agência: ");
         int number = sc.nextInt();
 
-        System.out.println("Por favor, digite o número a Agência");
-        String agency = sc.nextLine();
+        System.out.println("Por favor, digite o número a Agência: ");
+        String agency = sc.next();
 
         System.out.println("Por favor, digite o Nome do Cliente: ");
-        String clientName = sc.nextLine();
+        String clientName = sc.next();
 
-        System.out.println("Tem Saldo Inicial ? (Y/N)");
+        System.out.println("Tem Saldo Inicial ? (Y/N) ");
         char answer = sc.next().charAt(0);
 
 
@@ -64,6 +64,15 @@ public class Program {
                 if(c.getNumber() == accountNumber){
                     c.withdraw(sc.nextDouble());
                 }
+            }
+        }
+
+        System.out.println("Digite o número da conta que deseja verificar o status: ");
+        int numberAccount = sc.nextInt();
+
+        for (ContaTerminal accountt : account){
+            if (numberAccount == accountt.getNumber()){
+                System.out.println(accountt);
             }
         }
 

@@ -48,9 +48,9 @@ public class ContaTerminal {
 
     @Override
     public String toString(){
-        return "Olá " + getClientName() + "obrigado por criar uma conta em nosso banco, sua agência é "
+        return "Olá " + getClientName() + " obrigado por criar uma conta em nosso banco, sua agência é "
                 + getAgency() + ", conta "
-                + getNumber() + "e seu saldo " +
+                + getNumber() + " e seu saldo " +
                 getBalance() + " já está disponível para Saque";
     }
 

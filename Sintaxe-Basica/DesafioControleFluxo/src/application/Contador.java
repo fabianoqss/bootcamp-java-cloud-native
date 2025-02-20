@@ -24,7 +24,6 @@ public class Contador {
             throw new ParametrosInvalidosException("O segundo parâmetro deve ser maior que o primeiro");
         }
         int contagem = parametroDois - parametroUm;
-        int contador = 0;
         for (int i= 1; i <= contagem; i++){
             System.out.println("Imprimindo o número " + i);
         }

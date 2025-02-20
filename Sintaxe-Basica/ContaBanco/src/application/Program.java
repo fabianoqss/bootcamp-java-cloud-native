@@ -40,15 +40,28 @@ public class Program {
         System.out.println("Deseja realizar Operações de Saque? (Y/N)" );
         char answerBalance = sc.next().charAt(0);
 
-        if(answerBalance == 'Y'){
+        if (answerBalance == 'Y') {
             System.out.println("Digite o número da conta que deseja fazer o Saque: ");
             int accountNumber = sc.nextInt();
 
             System.out.println("Digite o valor que deseja sacar: ");
-            for(ContaTerminal c : account){
-                if(c.getNumber() == accountNumber){
-                    c.withdraw(sc.nextDouble());
+            boolean saqueRealizado = false;
+
+            for (ContaTerminal c : account) {
+                if (c.getNumber() == accountNumber) {
+                    if (c.getBalance() == null || c.getBalance() <= 0) {
+                        System.out.println("A conta não tem saldo disponível.");
+                        break;
+                    } else {
+                        c.withdraw(sc.nextDouble());
+                        saqueRealizado = true;
+                        break;
+                    }
                 }
+            }
+
+            if (!saqueRealizado) {
+                System.out.println("Conta não encontrada ou saldo insuficiente.");
             }
         }
 

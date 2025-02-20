@@ -4,23 +4,22 @@ Este repositório foi criado para armazenar os projetos do Bootcamp Bradesco - J
 
 - A Medida que as tecnologias e os projetos irão sendo concluídos , o Repositório será atualizado.
 
- ## Projetos 
+## Projetos
 
-- Criando Um Pequeno Sistema Para Validação de Processo Seletivo
+- Criando Um pequeno sistema para Conta Bancária.
+- Criando Um Pequeno Sistema Para Validação de Processo Seletivo.
 
-
-## Tecnologias 
+## Tecnologias
 
 - Java
 - Spring Boot
 - Design Patterns
 - API Rest
 
-
-
 ## Como usar
 
 1. Clone este repositório:
+
    ```bash
    git clone https://github.com/seu-usuario/backend-training.git
    ```
@@ -28,5 +27,3 @@ Este repositório foi criado para armazenar os projetos do Bootcamp Bradesco - J
 2. Navegue até o projeto desejado.
 
 3. Siga as instruções no README de cada projeto para configurá-lo e executá-lo.
-
-

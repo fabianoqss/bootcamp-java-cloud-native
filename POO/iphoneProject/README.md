@@ -4,6 +4,7 @@
 
 
 ## 📌 Implementação Das Classes
+![image](https://github.com/user-attachments/assets/e0e803c7-0ee9-459a-8e1b-ce6e1dec06c4)
 
 
 

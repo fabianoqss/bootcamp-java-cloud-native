@@ -55,9 +55,15 @@ public abstract class Conta implements IConta {
         return cliente;
     }
 
-    @Override
-    public String toString(){
-        return "";
+
+    public void imprimirInfosComuns(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Titular: ").append(cliente.getNome()).append("\n");
+        sb.append("Agencia: ").append(getAgencia()).append("\n");
+        sb.append("Numero: ").append(getNumero()).append("\n");
+        sb.append(String.format("Saldo: %.2f", getSaldo()));
+
+        System.out.println(sb.toString());
     }
 
 }

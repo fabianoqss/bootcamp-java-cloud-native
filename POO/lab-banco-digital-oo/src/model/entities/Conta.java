@@ -1,6 +1,9 @@
 package model.entities;
 
-public class Conta {
+import model.exception.SaldoInsuficienteException;
+import model.interfaces.IConta;
+
+public abstract class Conta implements IConta {
 
     private Integer agencia;
     private Integer numero;
@@ -13,6 +16,25 @@ public class Conta {
         this.saldo = saldo;
         this.cliente = cliente;
     }
+
+    @Override
+    public void sacar(double valor){
+        if(valor > getSaldo()){
+            throw new SaldoInsuficienteException("valor maior do que o saldo da conta!");
+        }
+        saldo -= valor;
+    }
+
+    @Override
+    public void depositar(double valor){
+        this.saldo += valor;
+    }
+
+    @Override
+    public void transferir(double valor, IConta contaOrigem, IConta contaDestino){
+
+    }
+
 
     public Integer getAgencia() {
         return agencia;

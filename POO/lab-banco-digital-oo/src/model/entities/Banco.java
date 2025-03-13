@@ -17,5 +17,14 @@ public class Banco{
         return contas;
     }
 
-
+    public void imprimeContas(){
+        System.out.println("======== Lista de Clientes ========");
+        for(Conta c: contas){
+            System.out.println("----------------------------------");
+            System.out.println("Titular: " + c.getCliente().getNome());
+            System.out.println("Agência: " + c.getAgencia());
+            System.out.println("Numero: " + c.getNumero());
+            System.out.println("----------------------------------");
+        }
+    }
 }

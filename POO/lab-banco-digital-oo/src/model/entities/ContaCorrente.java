@@ -11,5 +11,4 @@ public class ContaCorrente extends Conta{
         System.out.println("=== Extrato Conta Corrente ===");
         super.imprimirInfosComuns();
     }
-
 }

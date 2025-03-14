@@ -60,7 +60,7 @@ public abstract class Conta implements IConta {
         sb.append("Titular: ").append(cliente.getNome()).append("\n");
         sb.append("Agencia: ").append(getAgencia()).append("\n");
         sb.append("Numero: ").append(getNumero()).append("\n");
-        sb.append(String.format("Saldo: %.2f", getSaldo()));
+        sb.append(String.format("Saldo: %.2f\n", getSaldo()));
         System.out.println(sb.toString());
     }
 

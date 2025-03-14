@@ -32,7 +32,6 @@ public abstract class Conta implements IConta {
 
     @Override
     public void transferir(double valor, IConta contaOrigem, IConta contaDestino){
-
     }
 
 

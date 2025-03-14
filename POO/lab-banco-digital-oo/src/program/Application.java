@@ -33,11 +33,11 @@ public class Application {
     public static void menu(){
         System.out.println("'---------- MENU ----------'");
         System.out.println("'Digite Para:'");
-        System.out.println("1 - Abrir Conta ");
-        System.out.println("2 - Remover Conta ");
+        System.out.println("1 - Abrir Conta "); // V
+        System.out.println("2 - Remover Conta ");// V
         System.out.println("3 - Buscar Conta ");
         System.out.println("4 - Fazer Operação de Transferência ");
-        System.out.println("5 - Exibir Todas as Contas do Banco ");
+        System.out.println("5 - Exibir Todas as Contas do Banco "); // V
         System.out.println("6 - Para sacar Dinheiro ");
         System.out.println("7 - Para Depositar dinheiro ");
         System.out.println("8 - Imprimir extrato de uma Conta");
@@ -48,6 +48,12 @@ public class Application {
         switch(opcao){
             case 1-> abrirConta();
             case 2-> removeConta();
+            case 3-> buscarUmaConta();
+            case 4-> transferencia();
+            case 5-> buscartodasAsContas();
+            case 6-> saque();
+            case 7-> deposito();
+            case 8-> imprimeExtrato();
         }
     }
 
@@ -62,8 +68,26 @@ public class Application {
         banco.removeConta(nome);
     }
 
+    public static void buscarUmaConta(){
+    }
+
+    public static void transferencia(){
+
+    }
+
     public static void buscartodasAsContas(){
         banco.imprimeContas();
     }
-    
+
+    public static void saque(){
+
+    }
+
+    public static void deposito(){
+
+    }
+
+    public static void imprimeExtrato(){
+
+    }
 }

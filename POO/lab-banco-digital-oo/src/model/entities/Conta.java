@@ -32,6 +32,11 @@ public abstract class Conta implements IConta {
 
     @Override
     public void transferir(double valor, IConta contaOrigem, IConta contaDestino){
+        if (contaOrigem.getSaldo() < valor) {
+            throw new SaldoInsuficienteException("Saldo insuficiente para transferência!");
+        }
+        contaOrigem.sacar(valor);
+        contaDestino.depositar(valor);
     }
 
 
@@ -44,7 +49,7 @@ public abstract class Conta implements IConta {
         return numero;
     }
 
-
+    @Override
     public Double getSaldo() {
         return saldo;
     }

@@ -32,7 +32,6 @@ public abstract class Conta implements IConta {
 
     @Override
     public void transferir(double valor, IConta contaOrigem, IConta contaDestino){
-
     }
 
 
@@ -62,7 +61,6 @@ public abstract class Conta implements IConta {
         sb.append("Agencia: ").append(getAgencia()).append("\n");
         sb.append("Numero: ").append(getNumero()).append("\n");
         sb.append(String.format("Saldo: %.2f", getSaldo()));
-
         System.out.println(sb.toString());
     }
 

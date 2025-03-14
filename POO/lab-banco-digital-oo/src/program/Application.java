@@ -62,5 +62,8 @@ public class Application {
         banco.removeConta(nome);
     }
 
-
+    public static void buscartodasAsContas(){
+        banco.imprimeContas();
+    }
+    
 }

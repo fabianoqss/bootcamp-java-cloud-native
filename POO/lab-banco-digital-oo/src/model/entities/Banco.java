@@ -7,7 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Banco{
-    private String nome;
     private List<Conta> contas = new ArrayList<>();
 
     public void adicionarConta(Conta conta){
@@ -26,12 +25,13 @@ public class Banco{
         }
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public List<Conta> getContas() {
-        return contas;
+    public Conta buscarConta(int numeroConta) {
+        for (Conta conta : contas) {
+            if (conta.getNumero() == numeroConta) {
+                return conta;
+            }
+        }
+        return null;
     }
 
     public void imprimeContas(){

@@ -7,7 +7,7 @@ public abstract class Conta implements IConta {
 
     private Integer agencia;
     private Integer numero;
-    private Double saldo;
+    protected Double saldo;
     private Cliente cliente;
 
     public Conta(Integer agencia, Integer numero, Double saldo, Cliente cliente) {
@@ -31,11 +31,11 @@ public abstract class Conta implements IConta {
     }
 
     @Override
-    public void transferir(double valor, IConta contaOrigem, IConta contaDestino){
-        if (contaOrigem.getSaldo() < valor) {
+    public void transferir(double valor, IConta contaDestino){
+        if (this.getSaldo() < valor) {
             throw new SaldoInsuficienteException("Saldo insuficiente para transferência!");
         }
-        contaOrigem.sacar(valor);
+        this.sacar(valor);
         contaDestino.depositar(valor);
     }
 

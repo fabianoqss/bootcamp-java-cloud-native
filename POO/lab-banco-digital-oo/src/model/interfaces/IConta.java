@@ -9,4 +9,6 @@ public interface IConta {
     void transferir(double valor, IConta contaOrigem, IConta contaDestino);
 
     void imprimirExtrato();
+
+    Double getSaldo();
 }

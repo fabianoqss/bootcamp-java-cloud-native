@@ -1,14 +1,13 @@
 package program;
 
-import model.entities.Banco;
-import model.entities.Conta;
+import model.entities.*;
+import model.enums.CategoriaConta;
 
 import java.util.Locale;
 import java.util.Scanner;
 
 public class Application {
     private static Banco banco = new Banco();
-    private static Conta contas;
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -33,11 +32,11 @@ public class Application {
     public static void menu(){
         System.out.println("'---------- MENU ----------'");
         System.out.println("'Digite Para:'");
-        System.out.println("1 - Abrir Conta ");
-        System.out.println("2 - Remover Conta ");
+        System.out.println("1 - Abrir Conta "); // V
+        System.out.println("2 - Remover Conta ");// V
         System.out.println("3 - Buscar Conta ");
         System.out.println("4 - Fazer Operação de Transferência ");
-        System.out.println("5 - Exibir Todas as Contas do Banco ");
+        System.out.println("5 - Exibir Todas as Contas do Banco "); // V
         System.out.println("6 - Para sacar Dinheiro ");
         System.out.println("7 - Para Depositar dinheiro ");
         System.out.println("8 - Imprimir extrato de uma Conta");
@@ -48,12 +47,44 @@ public class Application {
         switch(opcao){
             case 1-> abrirConta();
             case 2-> removeConta();
+            case 3-> buscarUmaConta();
+            case 4-> transferencia();
+            case 5-> buscartodasAsContas();
+            case 6-> saque();
+            case 7-> deposito();
+            case 8-> imprimeExtrato();
         }
     }
 
     public static void abrirConta(){
         System.out.println("Conta corrente ou Conta poupança ?");
+        String tipoContaStr = sc.nextLine().toUpperCase();
+        CategoriaConta tipoConta = CategoriaConta.valueOf(tipoContaStr);
 
+        System.out.println("Digite o Número da Agência: ");
+        int numberAgency = sc.nextInt();
+
+        System.out.println("Digite o número da conta: ");
+        int numberAccount = sc.nextInt();
+
+        System.out.println("Existe saldo inicial? (Sim/Não)");
+        sc.nextLine();
+        double saldoInicial = 0;
+        if (sc.nextLine().equalsIgnoreCase("Sim")){
+            System.out.println("Se existir , digite o saldo inicial");
+            saldoInicial = sc.nextDouble();
+        }
+
+
+
+        System.out.println("Digite o nome do cliente: ");
+        String cliente = sc.nextLine();
+
+        if (tipoConta == CategoriaConta.CORRENTE){
+        banco.adicionarConta(new ContaCorrente(numberAgency, numberAccount, saldoInicial, new Cliente(cliente)));
+        }else if(tipoConta == CategoriaConta.POUPANCA){
+        banco.adicionarConta(new ContaPoupanca(numberAgency, numberAccount, saldoInicial, new Cliente(cliente)));
+        }
     }
 
     public static void removeConta(){
@@ -62,8 +93,26 @@ public class Application {
         banco.removeConta(nome);
     }
 
+    public static void buscarUmaConta(){
+    }
+
+    public static void transferencia(){
+
+    }
+
     public static void buscartodasAsContas(){
         banco.imprimeContas();
     }
-    
+
+    public static void saque(){
+
+    }
+
+    public static void deposito(){
+
+    }
+
+    public static void imprimeExtrato(){
+
+    }
 }

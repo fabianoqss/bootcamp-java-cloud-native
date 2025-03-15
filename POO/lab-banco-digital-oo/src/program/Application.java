@@ -21,9 +21,6 @@ public class Application {
             int opcao = sc.nextInt();
             opcoes(opcao);
 
-
-
-
             System.out.println("Deseja continuar ou sair do programa? (S/N)");
             answer = sc.next();
         }while(answer.equalsIgnoreCase("S"));
@@ -33,7 +30,6 @@ public class Application {
 
     public static void menu(){
         System.out.println("'---------- MENU ----------'");
-        System.out.println("'Digite Para:'");
         System.out.println("1 - Abrir Conta "); // V
         System.out.println("2 - Remover Conta ");// V
         System.out.println("3 - Buscar Conta ");
@@ -42,6 +38,7 @@ public class Application {
         System.out.println("6 - Para sacar Dinheiro ");
         System.out.println("7 - Para Depositar dinheiro ");
         System.out.println("8 - Imprimir extrato de uma Conta");
+        System.out.println("Escolha uma opção: ");
     }
 
     public static void opcoes(int opcao){

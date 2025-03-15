@@ -3,6 +3,7 @@ package program;
 import model.entities.*;
 import model.enums.CategoriaConta;
 import model.exception.SaldoInsuficienteException;
+import model.interfaces.IConta;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -98,6 +99,31 @@ public class Application {
     }
 
     public static void transferencia(){
+        System.out.println("Digite o número da conta de origem: ");
+        int numeroOrigem = sc.nextInt();
+
+        System.out.println("Digite o número da conta de destino: ");
+        int numeroDestino = sc.nextInt();
+
+        System.out.println("Digite o valor a transferir: ");
+        double valor = sc.nextDouble();
+
+        IConta contaOrigem = banco.buscarConta(numeroOrigem);
+        IConta contaDestino = banco.buscarConta(numeroDestino);
+
+        if (contaOrigem == null || contaDestino == null) {
+            System.out.println("Conta de origem ou destino não encontrada!");
+            return;
+        }
+
+        try {
+            contaOrigem.transferir(valor, contaDestino);
+            System.out.println("Transferência realizada com sucesso!");
+        } catch (SaldoInsuficienteException e) {
+            System.out.println("Erro: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Erro inesperado: " + e.getMessage());
+        }
     }
 
     public static void buscartodasAsContas(){

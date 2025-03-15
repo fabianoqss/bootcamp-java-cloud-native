@@ -2,6 +2,7 @@ package program;
 
 import model.entities.*;
 import model.enums.CategoriaConta;
+import model.exception.SaldoInsuficienteException;
 
 import java.util.Locale;
 import java.util.Scanner;
@@ -104,14 +105,52 @@ public class Application {
     }
 
     public static void saque(){
+        System.out.println("Digite o número da conta: ");
+        int numeroConta = sc.nextInt();
 
+        Conta conta = banco.buscarConta(numeroConta);
+        if (conta == null) {
+            System.out.println("Conta não encontrada!");
+            return;
+        }
+
+        System.out.println("Digite o valor do saque: ");
+        double valor = sc.nextDouble();
+
+        try {
+            conta.sacar(valor);
+            System.out.println("Saque realizado com sucesso!");
+        } catch (SaldoInsuficienteException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void deposito(){
+        System.out.println("Digite o número da conta: ");
+        int numeroConta = sc.nextInt();
 
+        Conta conta = banco.buscarConta(numeroConta);
+        if (conta == null) {
+            System.out.println("Conta não encontrada!");
+            return;
+        }
+
+        System.out.println("Digite o valor do depósito: ");
+        double valor = sc.nextDouble();
+        conta.depositar(valor);
+        System.out.println("Depósito realizado com sucesso!");
     }
 
     public static void imprimeExtrato(){
+        System.out.println("Digite o número da conta: ");
+        int numeroConta = sc.nextInt();
 
+        Conta conta = banco.buscarConta(numeroConta);
+        if (conta == null) {
+            System.out.println("Conta não encontrada!");
+            return;
+        }
+
+        conta.imprimirInfosComuns();
     }
 }

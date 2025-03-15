@@ -31,7 +31,7 @@ public class Banco{
                 return conta;
             }
         }
-        return null; // Conta não encontrada
+        return null;
     }
 
     public void imprimeContas(){

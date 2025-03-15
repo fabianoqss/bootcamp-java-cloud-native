@@ -97,7 +97,6 @@ public class Application {
     }
 
     public static void transferencia(){
-
     }
 
     public static void buscartodasAsContas(){

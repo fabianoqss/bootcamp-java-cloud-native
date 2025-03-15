@@ -49,12 +49,11 @@ public class Application {
         switch(opcao){
             case 1-> abrirConta();
             case 2-> removeConta();
-            case 3-> buscarUmaConta();
-            case 4-> transferencia();
-            case 5-> buscartodasAsContas();
-            case 6-> saque();
-            case 7-> deposito();
-            case 8-> imprimeExtrato();
+            case 3-> transferencia();
+            case 4-> buscartodasAsContas();
+            case 5-> saque();
+            case 6-> deposito();
+            case 7-> imprimeExtrato();
         }
     }
 
@@ -95,8 +94,6 @@ public class Application {
         banco.removeConta(nome);
     }
 
-    public static void buscarUmaConta(){
-    }
 
     public static void transferencia(){
         System.out.println("Digite o número da conta de origem: ");

@@ -6,8 +6,13 @@ Este repositório foi criado para armazenar os projetos do Bootcamp Bradesco - J
 
 ## Projetos
 
+Sintaxe do Java:
 - Criando Um pequeno sistema para Conta Bancária.
 - Criando Um Pequeno Sistema Para Validação de Processo Seletivo.
+
+Orientação a Objeto:
+- Projeto do Iphone.
+- Criando um Banco Digital.
 
 ## Tecnologias
 

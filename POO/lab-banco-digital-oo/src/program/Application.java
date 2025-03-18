@@ -50,6 +50,7 @@ public class Application {
             case 5-> saque();
             case 6-> deposito();
             case 7-> imprimeExtrato();
+            default -> System.out.println("Opção inválida! Tente novamente.");
         }
     }
 

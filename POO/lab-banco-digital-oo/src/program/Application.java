@@ -31,14 +31,13 @@ public class Application {
     public static void menu(){
         System.out.println("'---------- MENU ----------'");
         System.out.println("1 - Abrir Conta "); // V
-        System.out.println("2 - Remover Conta ");// V
-        System.out.println("3 - Buscar Conta ");
-        System.out.println("4 - Fazer Operação de Transferência ");
-        System.out.println("5 - Exibir Todas as Contas do Banco "); // V
-        System.out.println("6 - Para sacar Dinheiro ");
-        System.out.println("7 - Para Depositar dinheiro ");
-        System.out.println("8 - Imprimir extrato de uma Conta");
-        System.out.println("Escolha uma opção: ");
+        System.out.println("2 - Remover Conta ");
+        System.out.println("3 - Fazer Operação de Transferência ");
+        System.out.println("4 - Exibir Todas as Contas do Banco ");
+        System.out.println("5 - Para sacar Dinheiro "); // V
+        System.out.println("6 - Para Depositar dinheiro  "); // V
+        System.out.println("7 - Imprimir extrato de uma Conta "); // V
+        System.out.println("Escolha uma opção: "); // V
     }
 
     public static void opcoes(int opcao){
@@ -55,7 +54,8 @@ public class Application {
     }
 
     public static void abrirConta(){
-        System.out.println("Conta corrente ou Conta poupança ?(CORRENTE/POUPANCA");
+        sc.nextLine();
+        System.out.println("Conta corrente ou Conta poupança ?(CORRENTE/POUPANCA)");
         String tipoContaStr = sc.nextLine().toUpperCase();
         CategoriaConta tipoConta = CategoriaConta.valueOf(tipoContaStr);
 
@@ -69,11 +69,11 @@ public class Application {
         sc.nextLine();
         double saldoInicial = 0;
         if (sc.nextLine().equalsIgnoreCase("Sim")){
-            System.out.println("Se existir , digite o saldo inicial");
+            System.out.println("Digite o saldo inicial: ");
             saldoInicial = sc.nextDouble();
         }
 
-
+        sc.nextLine();
 
         System.out.println("Digite o nome do cliente: ");
         String cliente = sc.nextLine();
@@ -86,6 +86,7 @@ public class Application {
     }
 
     public static void removeConta(){
+        sc.nextLine();
         System.out.println("Digite o nome da conta ser removido: ");
         String nome = sc.nextLine();
         banco.removeConta(nome);

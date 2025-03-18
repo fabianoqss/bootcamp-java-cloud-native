@@ -15,12 +15,19 @@ public class Banco{
 
     public void removeConta(String nome){
         Iterator<Conta> iterator = contas.iterator();
+
+        boolean removido = false;
         while (iterator.hasNext()) {
             Conta c = iterator.next();
             if (c.getCliente().getNome().equals(nome)) {
                 iterator.remove();
-            }else{
-                throw new IllegalArgumentException("Conta não encontrada e não removida!");
+                removido = true;
+                System.out.println("Conta Removido com Sucesso!");
+                break;
+            }
+            
+            if(!removido){
+                throw new IllegalArgumentException("Conta não encontrada , Portanto não será removida!");
             }
         }
     }
@@ -36,6 +43,9 @@ public class Banco{
 
     public void imprimeContas(){
         System.out.println("======== Lista de Clientes ========");
+        if(contas == null){
+            System.out.println("Não há contas registradas no Banco!");
+        }
         for(Conta c: contas){
             System.out.println("----------------------------------");
             System.out.println("Titular: " + c.getCliente().getNome());

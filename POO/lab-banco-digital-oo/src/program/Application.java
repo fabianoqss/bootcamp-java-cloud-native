@@ -55,7 +55,7 @@ public class Application {
     }
 
     public static void abrirConta(){
-        System.out.println("Conta corrente ou Conta poupança ?");
+        System.out.println("Conta corrente ou Conta poupança ?(CORRENTE/POUPANCA");
         String tipoContaStr = sc.nextLine().toUpperCase();
         CategoriaConta tipoConta = CategoriaConta.valueOf(tipoContaStr);
 

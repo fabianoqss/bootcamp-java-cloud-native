@@ -25,7 +25,6 @@ public class Banco{
                 System.out.println("Conta Removido com Sucesso!");
                 break;
             }
-            
             if(!removido){
                 throw new IllegalArgumentException("Conta não encontrada , Portanto não será removida!");
             }
@@ -43,7 +42,7 @@ public class Banco{
 
     public void imprimeContas(){
         System.out.println("======== Lista de Clientes ========");
-        if(contas == null){
+        if(contas.isEmpty()){
             System.out.println("Não há contas registradas no Banco!");
         }
         for(Conta c: contas){

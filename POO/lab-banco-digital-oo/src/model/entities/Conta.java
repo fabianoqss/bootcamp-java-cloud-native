@@ -60,7 +60,7 @@ public abstract class Conta implements IConta {
     }
 
 
-    public void imprimirInfosComuns(){
+    public void imprimirExtrato(){
         StringBuilder sb = new StringBuilder();
         sb.append("Titular: ").append(cliente.getNome()).append("\n");
         sb.append("Agencia: ").append(getAgencia()).append("\n");

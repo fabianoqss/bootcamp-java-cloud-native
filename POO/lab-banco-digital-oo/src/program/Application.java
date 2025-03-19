@@ -21,23 +21,25 @@ public class Application {
             int opcao = sc.nextInt();
             opcoes(opcao);
 
-            System.out.println("Deseja continuar ou sair do programa? (S/N)");
+            System.out.println("Deseja continuar ou sair do programa? (Sim/Não)");
+            System.out.println("Sim - para continuar.");
+            System.out.println("Não - Para sair.");
             answer = sc.next();
-        }while(answer.equalsIgnoreCase("S"));
+        }while(answer.equalsIgnoreCase("Sim"));
     }
 
 
 
     public static void menu(){
         System.out.println("'---------- MENU ----------'");
-        System.out.println("1 - Abrir Conta "); // V
+        System.out.println("1 - Abrir Conta ");
         System.out.println("2 - Remover Conta ");
         System.out.println("3 - Fazer Operação de Transferência ");
         System.out.println("4 - Exibir Todas as Contas do Banco ");
-        System.out.println("5 - Para sacar Dinheiro "); // V
-        System.out.println("6 - Para Depositar dinheiro  "); // V
-        System.out.println("7 - Imprimir extrato de uma Conta "); // V
-        System.out.println("Escolha uma opção: "); // V
+        System.out.println("5 - Para sacar Dinheiro ");
+        System.out.println("6 - Para Depositar dinheiro  ");
+        System.out.println("7 - Imprimir extrato de uma Conta ");
+        System.out.println("Escolha uma opção: ");
     }
 
     public static void opcoes(int opcao){
@@ -56,9 +58,18 @@ public class Application {
 
     public static void abrirConta(){
         sc.nextLine();
-        System.out.println("Conta corrente ou Conta poupança ?(CORRENTE/POUPANCA)");
-        String tipoContaStr = sc.nextLine().toUpperCase();
-        CategoriaConta tipoConta = CategoriaConta.valueOf(tipoContaStr);
+        CategoriaConta tipoConta = null;
+
+        while (tipoConta == null) {
+            System.out.println("Conta Corrente ou Conta Poupança? (CORRENTE/POUPANCA)");
+            String tipoContaStr = sc.nextLine().toUpperCase();
+
+            try {
+                tipoConta = CategoriaConta.valueOf(tipoContaStr);
+            } catch (IllegalArgumentException e) {
+                System.out.println("Opção inválida! Digite 'CORRENTE' ou 'POUPANCA'.");
+            }
+        }
 
         System.out.println("Digite o Número da Agência: ");
         int numberAgency = sc.nextInt();
@@ -72,18 +83,17 @@ public class Application {
         if (sc.nextLine().equalsIgnoreCase("Sim")){
             System.out.println("Digite o saldo inicial: ");
             saldoInicial = sc.nextDouble();
+            sc.nextLine();
         }
+            System.out.println("Digite o nome do cliente: ");
+            String cliente = sc.nextLine();
 
-        sc.nextLine();
+            if (tipoConta == CategoriaConta.CORRENTE) {
+                banco.adicionarConta(new ContaCorrente(numberAgency, numberAccount, saldoInicial, new Cliente(cliente)));
+            } else if (tipoConta == CategoriaConta.POUPANCA) {
+                banco.adicionarConta(new ContaPoupanca(numberAgency, numberAccount, saldoInicial, new Cliente(cliente)));
+            }
 
-        System.out.println("Digite o nome do cliente: ");
-        String cliente = sc.nextLine();
-
-        if (tipoConta == CategoriaConta.CORRENTE){
-        banco.adicionarConta(new ContaCorrente(numberAgency, numberAccount, saldoInicial, new Cliente(cliente)));
-        }else if(tipoConta == CategoriaConta.POUPANCA){
-        banco.adicionarConta(new ContaPoupanca(numberAgency, numberAccount, saldoInicial, new Cliente(cliente)));
-        }
     }
 
     public static void removeConta(){
@@ -172,7 +182,6 @@ public class Application {
             System.out.println("Conta não encontrada!");
             return;
         }
-
-        conta.imprimirInfosComuns();
+        conta.imprimirExtrato();
     }
 }

@@ -26,7 +26,7 @@ Este repositório foi criado para armazenar os projetos do Bootcamp Bradesco - J
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/backend-training.git
+   git clone https://github.com/fabianoqss/backend-training.git
    ```
 
 2. Navegue até o projeto desejado.

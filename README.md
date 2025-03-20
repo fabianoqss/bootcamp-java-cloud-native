@@ -7,10 +7,12 @@ Este repositório foi criado para armazenar os projetos do Bootcamp Bradesco - J
 ## Projetos
 
 ### Sintaxe do Java:
+
 - Criando Um pequeno sistema para Conta Bancária.
 - Criando Um Pequeno Sistema Para Validação de Processo Seletivo.
 
 ### Orientação a Objeto:
+
 - Projeto do Iphone.
 - Criando um Banco Digital.
 
@@ -26,7 +28,7 @@ Este repositório foi criado para armazenar os projetos do Bootcamp Bradesco - J
 1. Clone este repositório:
 
    ```bash
-   git clone https://github.com/seu-usuario/backend-training.git
+   git clone https://github.com/fabianoqss/backend-training.git
    ```
 
 2. Navegue até o projeto desejado.

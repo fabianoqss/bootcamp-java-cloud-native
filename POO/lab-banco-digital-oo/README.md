@@ -2,7 +2,6 @@
 
 Este projeto foi desenvolvido como um desafio para aprofundar o conhecimento no domínio bancário. Toda a implementação foi feita em hardcode, com a adição de novos métodos para torná-lo mais robusto e funcional.
 
-
 ## 📌 Funcionalidades
 
 - Abrir uma conta.
@@ -10,8 +9,6 @@ Este projeto foi desenvolvido como um desafio para aprofundar o conhecimento no 
 - Operações de Saque, Transferência e depósito.
 - Imprimir extrato de uma conta.
 - Listas contas em um banco.
-
-
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -21,17 +18,27 @@ Este projeto foi desenvolvido como um desafio para aprofundar o conhecimento no 
 ## 🚀 Como Executar
 
 1. **Clone este repositório**:
+
    ```bash
-   git clone https://github.com/seu-usuario/backend-training.git
+   git clone https://github.com/fabianoqss/bootcamp-java-cloud-native.git
+
+   ```
 
 2. **Navegue até o projeto desejado.**
-      ```bash
-      cd backend-training
+
+   ```bash
+   cd bootcamp-java-cloud-native/POO/DesafioControleFluxo
+
+   ```
 
 3. **Compile o código:**
-      ```bash
-      javac Main.java
+
+   ```bash
+   javac Main.java
+
+   ```
 
 4. **Execute o programa:**
-      ```bash
-      java Main
+   ```bash
+   java Main
+   ```

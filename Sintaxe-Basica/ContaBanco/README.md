@@ -15,17 +15,27 @@ Este é um projeto simples para simular operações bancárias usando Java no te
 ## 🚀 Como Executar
 
 1. **Clone este repositório**:
+
    ```bash
-   git clone https://github.com/seu-usuario/backend-training.git
+   git clone https://github.com/fabianoqss/backend-training.git
+
+   ```
 
 2. **Navegue até o projeto desejado.**
-      ```bash
-      cd backend-training
+
+   ```bash
+   cd bootcamp-java-cloud-native/Sintaxe-Basica/ContaBanco/src/application
+
+   ```
 
 3. **Compile o código:**
-      ```bash
-      javac Main.java
+
+   ```bash
+   javac Main.java
+
+   ```
 
 4. **Execute o programa:**
-      ```bash
-      java Main
+   ```bash
+   java Main
+   ```
